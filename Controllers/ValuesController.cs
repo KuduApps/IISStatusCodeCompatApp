@@ -10,11 +10,19 @@ namespace Server462.Controllers
 {
     public class ValuesController : ApiController
     {
+        // GET api/values/5
         public HttpResponseMessage Get(int id)
         {
-
             var res = new HttpResponseMessage();
-            res.StatusCode = HttpStatusCode.OK;
+            if (id == 204)
+            {
+                res.StatusCode = HttpStatusCode.NoContent;
+            }
+            else if (id == 205)
+            {
+                res.StatusCode = HttpStatusCode.ResetContent;
+            }
+
             res.Content = new StringContent("content!");
 
             return res;
