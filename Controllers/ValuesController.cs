@@ -14,6 +14,8 @@ namespace Server462.Controllers
         public HttpResponseMessage Get(int id)
         {
             var res = new HttpResponseMessage();
+
+
             if (id == 204)
             {
                 res.StatusCode = HttpStatusCode.NoContent;
@@ -21,6 +23,10 @@ namespace Server462.Controllers
             else if (id == 205)
             {
                 res.StatusCode = HttpStatusCode.ResetContent;
+            }
+            else
+            {
+                res.StatusCode = HttpStatusCode.OK;
             }
 
             res.Content = new StringContent("content!");
