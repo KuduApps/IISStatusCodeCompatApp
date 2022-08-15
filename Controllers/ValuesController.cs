@@ -8,9 +8,9 @@ using System.Web.SessionState;
 
 namespace Server462.Controllers
 {
-    public class TestController : ApiController
+    public class ValuesController : ApiController
     {
-        // GET api/test/5
+        // GET api/values/5
         public HttpResponseMessage Get(int id)
         {
             var res = new HttpResponseMessage();
