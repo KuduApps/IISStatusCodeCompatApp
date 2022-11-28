@@ -27,6 +27,7 @@ namespace Server462.Controllers
             else if (id == 429)
             {
                 res.StatusCode = (HttpStatusCode)429;
+                res.Headers.Add("x-ms-cache-throttling", "true");
             }
             else
             {
