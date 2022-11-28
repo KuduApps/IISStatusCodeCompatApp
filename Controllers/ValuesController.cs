@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Web.Http;
-using System.Web.SessionState;
 
 namespace Server462.Controllers
 {
@@ -28,6 +26,7 @@ namespace Server462.Controllers
             {
                 res.StatusCode = (HttpStatusCode)429;
                 res.Headers.Add("x-ms-cache-throttling", "true");
+                res.Headers.RetryAfter = new RetryConditionHeaderValue(TimeSpan.FromSeconds(5));
             }
             else
             {
