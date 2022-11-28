@@ -26,7 +26,7 @@ namespace Server462.Controllers
             {
                 res.StatusCode = (HttpStatusCode)429;
                 res.Headers.Add("x-ms-cache-throttling", "true");
-                res.Headers.RetryAfter = new RetryConditionHeaderValue(DateTime.UtcNow + TimeSpan.FromSeconds(5));
+                res.Headers.RetryAfter = new RetryConditionHeaderValue(TimeSpan.FromSeconds(5));
             }
             else
             {
