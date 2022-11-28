@@ -24,6 +24,10 @@ namespace Server462.Controllers
             {
                 res.StatusCode = HttpStatusCode.ResetContent;
             }
+            else if (id == 429)
+            {
+                res.StatusCode = (HttpStatusCode)429;
+            }
             else
             {
                 res.StatusCode = HttpStatusCode.OK;
